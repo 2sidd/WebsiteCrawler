@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sample website using Bootstrap and ExpressJS</title>
+
+    <!---CDN Links-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!---Angular code local Links -->
+    <script src='/js/homeCtrl.js'></script>
+    <style>
+        .container {
+            display: flex;
+            margin: 10px
+        }
+        
+        .container>div {
+            flex: 1;
+            /*grow*/
+        }
+        
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Roboto", sans-serif
+        }
+        
+        b {
+            color: darkcyan
+        }
+        
+        .bodycss {
+            background-color: lightgray;
+        }
+        
+        .crawlBtn {
+            margin-top: 20px;
+            border-radius: 10px;
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body class="bodycss">
+    <div ng-app="webScraper" ng-controller="homeCtrl">
+        <div class="container">
+            <div> <br/> <b>Website Url:</b> <input style="width:75%" ng-model="url"><br></div>
+            <div> <br/> <b>Crawling level:</b> <input type="number" name="quantity" min="1" ng-model="depth"><br></div>
+            <div> <button class="crawlBtn" ng-click="fetchContent()"><b>Crawl</b></button></div>
+        </div>
+        <div class="container">
+            <div><b>All Links: {{links.allLinks.length}}</b>
+                <div ng-repeat="al in links.allLinks track by $index">
+                    <div> {{al}} </div>
+                </div>
+            </div>
+            <div><b>Visited Links: {{links.visitedLinks.length}}</b>
+                <div ng-repeat="vl in links.visitedLinks">
+                    <div> {{vl}} </div>
+                </div>
+            </div>
+            <div><b>Broken Links: {{links.brokenLinks.length}}</b>
+                <div ng-repeat="bl in links.brokenLinks">
+                    <div> {{bl}} </div>
+                    </br>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

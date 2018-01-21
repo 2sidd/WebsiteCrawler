@@ -1,0 +1,38 @@
+{
+    "name": "web-crawler-application",
+    "version": "1.0.0",
+    "description": "crawl webpage and display result on webpage",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "website",
+        "crawler",
+        "custom",
+        "crawler",
+        "website",
+        "scraping",
+        "data",
+        "extract",
+        "from",
+        "website",
+        "webpage",
+        "parsing",
+        "trasverse",
+        "web",
+        "dom",
+        "elements",
+        "siddhartha",
+        "tiwary"
+    ],
+    "author": "siddhartha tiwary",
+    "dependencies": {
+        "express": "latest",
+        "request": "latest",
+        "cheerio": "latest",
+        "url-parse": "latest"
+
+    },
+    "license": "MIT"
+}
