@@ -5,7 +5,6 @@ var cheerio = require('cheerio');
 var URL = require('url-parse');
 
 router.get('/', function(req, res, next) {
-    console.log(req.query.requestedURL);
     const REQUESTED_URL = req.query.requestedURL;
     const CRAWL_PAGE_LIMIT = req.query.depth;
     var pagesVisited = {};
