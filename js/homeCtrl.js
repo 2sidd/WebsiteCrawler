@@ -4,13 +4,12 @@ app.controller('homeCtrl', function($scope, $http) {
     $scope.links;
     $scope.depth = 10;
     $scope.fetchContent = function() {
-        let url = $scope.url;
-        url = (url.indexOf('://') == -1) ? 'http://' + url : url;
-        var data = {
-            requestedURL: url,
+
+        let data = {
+            requestedURL: ($scope.url.indexOf('://') == -1) ? 'http://' + $scope.url : $scope.url,
             depth: $scope.depth
         };
-        var config = {
+        let config = {
             params: data,
             headers: { 'Accept': 'application/json' }
         };

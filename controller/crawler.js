@@ -7,14 +7,14 @@ var URL = require('url-parse');
 router.get('/', function(req, res, next) {
     const REQUESTED_URL = req.query.requestedURL;
     const CRAWL_PAGE_LIMIT = req.query.depth;
-    var pagesVisited = {};
-    var numPagesVisited = 0;
-    var pagesToVisit = [];
+    let pagesVisited = {};
+    let numPagesVisited = 0;
+    let pagesToVisit = [];
 
-    var url = new URL(REQUESTED_URL);
-    var baseUrl = url.protocol + "//" + url.hostname;
+    let url = new URL(REQUESTED_URL);
+    let baseUrl = url.protocol + "//" + url.hostname;
 
-    var responseObject = new Object();
+    let responseObject = new Object();
     responseObject.brokenLinks = [];
     responseObject.allLinks = [];
     responseObject.visitedLinks = [];
@@ -53,7 +53,7 @@ router.get('/', function(req, res, next) {
     }
 
     function getInternalLinks($) {
-        var links = $("a[href^='/']");
+        let links = $("a[href^='/']");
         links.each(function() {
             pagesToVisit.push(baseUrl + $(this).attr('href'));
         });
