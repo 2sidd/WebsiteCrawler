@@ -17,6 +17,9 @@ router.get('/', function(req, res) {
 app.get('/js/homeCtrl.js', function(req, res) {
     res.sendFile(__dirname + '/js/homeCtrl.js');
 });
+app.get('/css/site.css', function(req, res) {
+    res.sendFile(__dirname + '/css/site.css');
+});
 app.listen(3300, function() {
     console.log('Listening on port 3300!');
 });

@@ -1,0 +1,33 @@
+  .container {
+      display: flex;
+      margin: 10px
+  }
+  
+  .container>div {
+      flex: 1;
+  }
+  
+  html,
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+      font-family: "Roboto", sans-serif
+  }
+  
+  b {
+      color: darkcyan
+  }
+  
+  .bodycss {
+      background-color: lightgray;
+  }
+  
+  .crawlBtn {
+      margin-top: 20px;
+      border-radius: 10px;
+      width: 150px;
+  }
